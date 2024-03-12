@@ -1,7 +1,8 @@
 function drdz = ball(t, X, b, omega, xi, m)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
-    %X : r1 r2 z1 z2
+    %X :    r   v_r     z   v_z
+    %drdz:  v_r a_r     v_z a_z
 
     g = 9.81;
     drdz = zeros(4, 1);
