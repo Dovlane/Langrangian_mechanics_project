@@ -54,15 +54,15 @@ ylim([-1, 1]);
 
 legend('$z-b \cdot r^2$', 'Interpreter', 'latex', 'Location', 'best');
 xlabel('t [s]', 'Interpreter', 'latex');
-ylabel('$z-b \cdot r^2$', 'Interpreter', 'latex');
+ylabel('z-b \cdot r^2', 'Interpreter', 'latex');
 
-title('Constraint function with respect to time');
+title('Constraint function');
 
 
 %%
 
 f3 = figure();
-f3.Name = 'generalised force z component';
+f3.Name = 'Generalised force z component';
 lambda = zeros(num,1);
 a_z_val = zeros(num, 1);
 dt = time / (num - 1);
@@ -77,15 +77,15 @@ lambda(num) = lambda(num - 1);
 plot(t,lambda);
 ylim([9.6 10.05]);
 legend('\lambda','location','best');
-xlabel('t [s]', 'Interpreter', 'latex', 'Location', 'best');
+xlabel('t [s]', 'Interpreter', 'latex');
 ylabel('$\lambda$');
-title('$F_z$ component with respect to time', 'Interpreter', 'latex');
+title('Constraint force z component');
 
 
 %%
 
 f4 = figure();
-f4.Name = 'generalised force r component';
+f4.Name = 'Generalised force r component with respect to time';
 F_r = zeros(num, 1);
 for c = 1:num
     F_r(c) = - 2 * b * r_val(c) * lambda(c);
@@ -102,18 +102,18 @@ title('$F_r$ with respect to time', 'Interpreter', 'latex');
 %%
 
 f5 = figure();
-f5.Name = 'trajectory';
+f5.Name = 'Trajectory';
 plot3(r_val, z_val, phi_val,'-r');
 title('Trajectory');
 
 
 %%
 f1 = figure();
-f1.Name = 'velocities';
+f1.Name = 'Graph dependency of v_r and v_z with respect to time';
 plot(t, v_r_val)
 hold on
 plot(t, v_z_val)
-xlabel('t [s]', 'Interpreter', 'latex');
+xlabel('$time$ [s]')
 ylabel('$v$ [m/s]')
 legend('v_r(t)', 'v_z(t)');
 title('Graph dependency of $v_r$ and $v_z$ with respect to time', 'Interpreter', 'latex');
@@ -126,9 +126,9 @@ f1.Name = 'Graph dependency of z and r with respect to time';
 plot(t, r_val)
 hold on
 plot(t, z_val)
-xlabel('t [s]', 'Interpreter', 'latex');
+xlabel('$time$ [s]')
 ylabel('$coor$ [m]')
-legend('r(t)', 'z(t)', 'Interpreter', 'latex', 'Location', 'best');
+legend('r(t)', 'z(t)');
 title('Graph dependency of $z$ and $r$ with respect to time', 'Interpreter', 'latex');
 hold off
 
@@ -141,5 +141,5 @@ plot(r_val, z_val);
 ylim([0 0.01])
 xlabel('$r$ [m]')
 ylabel('$z$ [m]')
-legend('$z(r)$', 'Interpreter', 'latex', 'Location', 'best');
+legend('r(t)', 'z(t)');
 title('Graph dependency of $z$ with respect to $r$', 'Interpreter', 'latex');
